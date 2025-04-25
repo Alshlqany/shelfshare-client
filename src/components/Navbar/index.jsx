@@ -1,7 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import logo from "../../assets/logo.png";
-import ShoppingCartOutlinedIcon from "@mui/icons-material/ShoppingCartOutlined";
 import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
 import PermIdentityIcon from "@mui/icons-material/PermIdentity";
 import HomeIcon from "@mui/icons-material/Home";
@@ -10,6 +9,8 @@ import MailOutlineIcon from "@mui/icons-material/MailOutline";
 import AdminPanelSettingsIcon from "@mui/icons-material/AdminPanelSettings";
 import { useSelector } from "react-redux";
 import StyledNavLink from "./StyledNavLink";
+import MobileNav from "./MobileNav";
+import CartIcon from "./CartIcon";
 
 const Navbar = () => {
   const isAdmin = useSelector((state) => state.user.role === "admin"); // FIXME:
@@ -29,9 +30,10 @@ const Navbar = () => {
           />
         </div>
         <div className="flex items-center gap-4">
-          <StyledNavLink to="/cart" icon={<ShoppingCartOutlinedIcon />} />
+          <CartIcon />
           <StyledNavLink to="/favorites" icon={<FavoriteBorderIcon />} />
           <StyledNavLink to="/Auth" icon={<PermIdentityIcon />} />
+          <MobileNav />
           {isAdmin && (
             <StyledNavLink
               to="/admin"
