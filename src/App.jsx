@@ -5,7 +5,7 @@ import Navbar from "./components/Navbar";
 
 function App() {
   return (
-    <main className="overfolow-hidden bg-'">
+    <main>
       <Toaster position="top-center" reverseOrder={false} />
       <Navbar />
       <Routes>

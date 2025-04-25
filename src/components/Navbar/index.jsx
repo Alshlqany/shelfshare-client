@@ -15,12 +15,12 @@ import CartIcon from "./CartIcon";
 const Navbar = () => {
   const isAdmin = useSelector((state) => state.user.role === "admin"); // FIXME:
   return (
-    <header className="fixed top-0 left-0 right-0 w-full z-0">
-      <nav className="bg-white py-2.5 mx-auto max-w-[1440px] px-6 lg:px-12 flex justify-between items-center h-25">
+    <header className="sticky top-0 left-0 right-0 w-full z-0 bg-white">
+      <nav className=" py-2.5 mx-auto max-w-[1440px] px-6 lg:px-12 flex justify-between items-center h-20">
         <Link to="/">
-          <img src={logo} alt="logo" className="w-25 inline-block" />
+          <img src={logo} alt="logo" className="w-30 inline-block mt-5" />
         </Link>
-        <div className="hidden md:flex">
+        <div className="hidden md:flex gap-4">
           <StyledNavLink to="/" icon={<HomeIcon />} text="Home" />
           <StyledNavLink to="/shop" icon={<StorefrontIcon />} text="Shop" />
           <StyledNavLink
@@ -32,7 +32,8 @@ const Navbar = () => {
         <div className="flex items-center gap-4">
           <CartIcon />
           <StyledNavLink to="/favorites" icon={<FavoriteBorderIcon />} />
-          <StyledNavLink to="/Auth" icon={<PermIdentityIcon />} />
+          <StyledNavLink to="/Auth" icon={<PermIdentityIcon />} />{" "}
+          {/* TODO: create an '** awwwards-side-menu **' here (profile,login.signup) */}
           <MobileNav />
           {isAdmin && (
             <StyledNavLink

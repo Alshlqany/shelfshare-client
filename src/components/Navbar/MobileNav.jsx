@@ -78,7 +78,7 @@ const MobileNav = () => {
             exit="closed"
             variants={menuVariants}
             transition={{ duration: 0.3 }}
-            className="absolute top-0 h-screen w-fit  right-0 bg-white px-6 pt-2 pb-4 shadow-lg z-50"
+            className="absolute top-0 h-screen w-fit  right-0 bg-white px-10 pt-2 pb-4 shadow-lg z-50"
           >
             <nav className="flex flex-col gap-4  justify-center  h-full">
               <motion.div
