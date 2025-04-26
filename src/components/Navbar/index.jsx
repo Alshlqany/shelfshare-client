@@ -15,8 +15,8 @@ import CartIcon from "./CartIcon";
 const Navbar = () => {
   const isAdmin = useSelector((state) => state.user.role === "admin"); // FIXME:
   return (
-    <header className="sticky top-0 left-0 right-0 w-full z-0 bg-white">
-      <nav className=" py-2.5 mx-auto max-w-[1440px] px-6 lg:px-12 flex justify-between items-center h-20">
+    <header className="fixed top-0 left-0 right-0 z-50  bg-white  container mx-auto px-5 py-2">
+      <nav className=" flex justify-between items-center h-20">
         <Link to="/">
           <img src={logo} alt="logo" className="w-30 inline-block mt-5" />
         </Link>
