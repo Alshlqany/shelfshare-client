@@ -1,6 +1,8 @@
+/* eslint-disable no-unused-vars */
 import React from "react";
 import { Link } from "react-router-dom";
 import hero2 from "../../assets/hero-2.svg";
+import { motion } from "framer-motion";
 
 const HeroSection = () => {
   return (
@@ -8,7 +10,11 @@ const HeroSection = () => {
       className="flex flex-col-reverse md:flex-row items-center  px-5"
       style={{ minHeight: "calc(100vh - 80px)" }}
     >
-      <div className="flex flex-col items-start text-left md:w-1/2 space-y-6">
+      <motion.div
+        className="flex flex-col items-start text-left md:w-1/2 space-y-6"
+        initial={{ x: -500 }}
+        animate={{ x: 0 }}
+      >
         <h1 className="text-3xl md:text-5xl font-bold leading-tight">
           Discover Your Next Favorite Book on
           <span className="text-[#2C9DB7]"> ShelfShare</span>
@@ -23,13 +29,15 @@ const HeroSection = () => {
         >
           Browse Collection
         </Link>
-      </div>
+      </motion.div>
 
       <div className="flex justify-center items-center md:w-1/2 mt-20">
-        <img
+        <motion.img
           src={hero2}
           alt="Bookshelf Illustration"
           className="w-full max-w-md md:max-w-lg"
+          initial={{ x: 500 }}
+          animate={{ x: 0 }}
         />
       </div>
     </section>

@@ -47,7 +47,7 @@ const Parallax = () => {
   return (
     <div
       ref={container}
-      className=" h-[175vh] flex  gap-[2vw] p-[2vw] box-border mt-20 overflow-hidden"
+      className=" h-[175vh] flex  gap-[2vw] justify-center box-border mt-20 overflow-hidden"
     >
       <Column images={[images[0], images[1], images[2], images[3]]} y={y} />
       <Column images={[images[4], images[5], images[6], images[7]]} y={y2} />

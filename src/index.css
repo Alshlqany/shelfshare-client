@@ -4,3 +4,19 @@ body {
   overflow-x: hidden;
   margin: 0;
 }
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #2c9eb779;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #2c9db7;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #2c9db7;
+}
