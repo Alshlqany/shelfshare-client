@@ -1,11 +1,13 @@
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 // eslint-disable-next-line no-unused-vars
-import { motion } from "framer-motion";
+import { AnimatePresence, motion } from "framer-motion";
 
 import Button from "./Button";
+import Menu from "./Menu";
 
 const User = () => {
   const [isActive, setIsActive] = useState(false);
+  const userRef = useRef(null);
   const variants = {
     open: {
       width: 170,
@@ -24,29 +26,38 @@ const User = () => {
       right: 0.7,
       transition: {
         duration: 0.5,
+        delay: 0.15,
         ease: [0.76, 0, 0.24, 1],
       },
     },
   };
+  useEffect(() => {
+    const handleClick = (event) => {
+      if (
+        (userRef.current && !userRef.current.contains(event.target)) ||
+        event.target.classList.contains("user-menu-link")
+      ) {
+        setIsActive(false);
+      }
+    };
+    document.addEventListener("mousedown", handleClick);
+    return () => {
+      document.removeEventListener("mousedown", handleClick);
+    };
+  }, []);
 
   return (
-    <div className="relative z-50 h-fit">
+    <div ref={userRef} className="relative z-50">
       <motion.div
         variants={variants}
         animate={isActive ? "open" : "closed"}
         className="bg-[#4ab3ca] rounded-3xl absolute"
-      ></motion.div>
+      >
+        <AnimatePresence>{isActive && <Menu />}</AnimatePresence>
+      </motion.div>
       <Button isActive={isActive} setIsActive={setIsActive} />
     </div>
   );
 };
 
 export default User;
-
-// {isAdmin && (
-//             <StyledNavLink
-//               to="/admin"
-//               icon={<AdminPanelSettingsIcon />}
-//               admin
-//             />
-//           )}
