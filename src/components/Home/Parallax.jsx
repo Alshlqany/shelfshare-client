@@ -45,17 +45,22 @@ const Parallax = () => {
   }, []);
 
   return (
-    <div
-      ref={container}
-      className=" h-[175vh] flex  gap-[2vw] justify-center box-border mt-20 overflow-hidden"
-    >
-      <Column images={[images[0], images[1], images[2], images[3]]} y={y} />
-      <Column images={[images[4], images[5], images[6], images[7]]} y={y2} />
-      <Column images={[images[8], images[9], images[10], images[11]]} y={y3} />
-      <Column
-        images={[images[12], images[13], images[14], images[15]]}
-        y={y4}
-      />
+    <div className="bg-[#2C9DB7]">
+      <div
+        ref={container}
+        className=" h-[175vh] flex  gap-[2vw] justify-center box-border mt-20 overflow-hidden"
+      >
+        <Column images={[images[0], images[1], images[2], images[3]]} y={y} />
+        <Column images={[images[4], images[5], images[6], images[7]]} y={y2} />
+        <Column
+          images={[images[8], images[9], images[10], images[11]]}
+          y={y3}
+        />
+        <Column
+          images={[images[12], images[13], images[14], images[15]]}
+          y={y4}
+        />
+      </div>
     </div>
   );
 };

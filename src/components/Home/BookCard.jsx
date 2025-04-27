@@ -2,10 +2,7 @@ import React from "react";
 
 const BookCard = ({ book }) => {
   return (
-    <div
-      key={book._id}
-      className="bg-white rounded-lg overflow-hidden w-60 mx-4"
-    >
+    <div className="bg-white rounded-lg overflow-hidden w-60 mx-4 ">
       <div className="h-64 w-full">
         <img
           src={book.image}

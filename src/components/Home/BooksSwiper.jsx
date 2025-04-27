@@ -16,10 +16,10 @@ const filters = {
     limit: 10,
     sort: "-soldTimes",
   },
-  loved: {
+  rate: {
     page: 1,
     limit: 10,
-    sort: "-favorites",
+    sort: "-rate",
   },
 };
 

@@ -2,10 +2,12 @@ import React from "react";
 import Title from "./Title";
 import BooksSwipper from "./BooksSwiper";
 
-const TopBooks = ({ filterId = "new", title = "Bestselling Books" }) => {
+const TopBooks = ({ filterId = "new", title = "Best selling" }) => {
   return (
     <div className="mt-15">
-      <Title title={title} />
+      <div className="w-full flex justify-center">
+        <Title title={title} />
+      </div>
       <BooksSwipper filterId={filterId} />
     </div>
   );
