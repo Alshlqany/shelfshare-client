@@ -1,6 +1,7 @@
 import { createBrowserRouter } from "react-router-dom";
 import Home from "./pages/Home";
 import UserLayout from "./components/UserLayout";
+import NotFound from "./pages/NotFound";
 
 const router = createBrowserRouter([
   {
@@ -14,11 +15,7 @@ const router = createBrowserRouter([
 
       {
         path: "*",
-        element: (
-          <div className="flex justify-center items-center h-screen">
-            <h1 className="text-4xl font-bold">404 Not Found</h1>
-          </div>
-        ),
+        element: <NotFound />,
       },
     ],
   },
