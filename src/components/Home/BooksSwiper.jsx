@@ -41,7 +41,10 @@ const BooksSwipper = ({ filterId }) => {
         }}
       >
         {data?.books.map((book) => (
-          <SwiperSlide key={book._id} className="flex justify-center max-w-xs">
+          <SwiperSlide
+            key={book._id}
+            className="flex justify-center items-center max-w-fit"
+          >
             <BookCard book={book} />
           </SwiperSlide>
         ))}

@@ -2,6 +2,7 @@ import { Container } from "lucide-react";
 import HeroSection from "../components/Home/HeroSection";
 import Parallax from "../components/Home/Parallax";
 import TopBooks from "../components/Home/TopBooks";
+import Footer from "../components/Footer";
 
 const Home = () => {
   return (
@@ -15,6 +16,7 @@ const Home = () => {
         <TopBooks title="New Arrivals" filterId="new" />
         <TopBooks title="Top Rated" filterId="rate" />
       </div>
+      <Footer />
     </div>
   );
 };

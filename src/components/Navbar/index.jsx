@@ -3,19 +3,16 @@ import React from "react";
 import { Link } from "react-router-dom";
 import logo from "../../assets/logo.png";
 import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
-import PermIdentityIcon from "@mui/icons-material/PermIdentity";
 import HomeIcon from "@mui/icons-material/Home";
 import StorefrontIcon from "@mui/icons-material/Storefront";
 import MailOutlineIcon from "@mui/icons-material/MailOutline";
-import AdminPanelSettingsIcon from "@mui/icons-material/AdminPanelSettings";
-import { useSelector } from "react-redux";
 import StyledNavLink from "./StyledNavLink";
 import MobileNav from "./MobileNav";
 import CartIcon from "./CartIcon";
 import { motion } from "framer-motion";
+import User from "./User";
 
 const Navbar = () => {
-  const isAdmin = useSelector((state) => state.user.role === "admin"); // FIXME:
   return (
     <header className="bg-[#f2fdff] w-full fixed top-0 left-0 z-50">
       <motion.div className="container mx-auto px-5 py-2 w-full">
@@ -49,15 +46,8 @@ const Navbar = () => {
           >
             <CartIcon />
             <StyledNavLink to="/favorites" icon={<FavoriteBorderIcon />} />
-            <StyledNavLink to="/Auth" icon={<PermIdentityIcon />} />
+            <User />
             <MobileNav />
-            {isAdmin && (
-              <StyledNavLink
-                to="/admin"
-                icon={<AdminPanelSettingsIcon />}
-                admin
-              />
-            )}
           </motion.div>
         </nav>
       </motion.div>
