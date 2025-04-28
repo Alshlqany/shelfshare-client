@@ -32,7 +32,7 @@ const LoginForm = () => {
   });
 
   return (
-    <FormContainer label="Login">
+    <FormContainer title="Login">
       <form className="flex flex-col space-y-6" onSubmit={formik.handleSubmit}>
         <Input
           label="Email"
@@ -78,7 +78,7 @@ const LoginForm = () => {
             to="/register"
             className="text-sm text-[#2C9DB7] hover:underline"
           >
-            Register
+            Create new account
           </Link>
         </div>
 

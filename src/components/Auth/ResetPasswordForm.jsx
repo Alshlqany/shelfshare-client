@@ -30,7 +30,7 @@ const ResetPasswordForm = () => {
   });
 
   return (
-    <FormContainer label="Reset Password">
+    <FormContainer title="Reset Password">
       <form className="flex flex-col space-y-6" onSubmit={formik.handleSubmit}>
         <Input
           error={formik.errors.email}

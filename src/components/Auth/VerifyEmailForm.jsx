@@ -2,7 +2,7 @@ import { useFormik } from "formik";
 import { verifyEmailSchema } from "../../validations/UserSchema";
 import { useVerifyOtpMutation } from "../../app/features/authApi";
 import toast from "react-hot-toast";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import SendOtpButton from "./SendOtpButton";
 import Input from "../ui/Input";
 import FormContainer from "./FormContainer";
@@ -10,11 +10,13 @@ import SubmitButton from "./SubmitButton";
 
 const VerifyEmailForm = () => {
   const [verifyOtp, { isLoading }] = useVerifyOtpMutation();
-
+  const location = useLocation();
+  const queryParams = new URLSearchParams(location.search);
+  const passedEmail = queryParams.get("email");
   const navigate = useNavigate();
   const formik = useFormik({
     initialValues: {
-      email: "",
+      email: passedEmail || "",
       newPassword: "",
       otp: "",
     },
@@ -31,7 +33,7 @@ const VerifyEmailForm = () => {
   });
 
   return (
-    <FormContainer label="Verify Your Email">
+    <FormContainer title="Verify Your Email">
       <form className="flex flex-col space-y-6" onSubmit={formik.handleSubmit}>
         <Input
           id="email"
