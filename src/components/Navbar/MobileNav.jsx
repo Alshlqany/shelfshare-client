@@ -5,6 +5,7 @@ import StyledNavLink from "./StyledNavLink";
 import HomeIcon from "@mui/icons-material/Home";
 import StorefrontIcon from "@mui/icons-material/Storefront";
 import MailOutlineIcon from "@mui/icons-material/MailOutline";
+import BurgerIcon from "../ui/BurgerIcon";
 
 const MobileNav = () => {
   const [isOpen, setIsOpen] = React.useState(false);
@@ -25,39 +26,7 @@ const MobileNav = () => {
 
   return (
     <div className="md:hidden">
-      <div className="z-50" onClick={toggleMenu}>
-        <motion.div
-          initial={false}
-          animate={isOpen ? "open" : "closed"}
-          className="cursor-pointer w-6 h-6 relative z-100"
-        >
-          <motion.span
-            className="absolute top-0 left-0 h-[2px] w-full bg-gray-700"
-            variants={{
-              closed: { rotate: 0, y: 0 },
-              open: { rotate: -45, y: 11 },
-            }}
-            transition={{ duration: 0.3 }}
-          />
-          <motion.span
-            className="absolute top-1/2 left-0 h-[2px] w-full bg-gray-700"
-            variants={{
-              closed: { opacity: 1 },
-              open: { opacity: 0 },
-            }}
-            transition={{ duration: 0.3 }}
-          />
-          <motion.span
-            className="absolute bottom-0 left-0 h-[2px] w-full bg-gray-700"
-            variants={{
-              closed: { rotate: 0, y: 0 },
-              open: { rotate: 45, y: -11 },
-            }}
-            transition={{ duration: 0.3 }}
-          />
-        </motion.div>
-      </div>
-
+      <BurgerIcon isOpen={isOpen} toggleMenu={toggleMenu} />
       <AnimatePresence>
         {isOpen && (
           <motion.div

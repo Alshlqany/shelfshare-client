@@ -1,11 +1,12 @@
 import { createBrowserRouter } from "react-router-dom";
 import Home from "./pages/Home";
-import UserLayout from "./components/UserLayout";
 import NotFound from "./pages/NotFound";
 import Login from "./pages/Login";
 import Register from "./pages/Register";
 import ResetPassword from "./pages/ResetPassword";
 import VerifyEmail from "./pages/VerifyEmail";
+import UserLayout from "./components/Layouts/UserLayout";
+import AdminLayout from "./components/Layouts/AdminLayout";
 
 const router = createBrowserRouter([
   {
@@ -18,6 +19,16 @@ const router = createBrowserRouter([
       { path: "/reset-password", element: <ResetPassword /> },
       { path: "/verify-email", element: <VerifyEmail /> },
       { path: "*", element: <NotFound /> },
+    ],
+  },
+  {
+    path: "/admin",
+    element: <AdminLayout />,
+    children: [
+      {
+        element: <div className="bg-orange-400 w-full">Admin Dashboard</div>,
+        index: true,
+      },
     ],
   },
 ]);

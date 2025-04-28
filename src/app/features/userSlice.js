@@ -3,7 +3,7 @@ import { jwtDecode } from "jwt-decode";
 
 const initialState = {
   token: "",
-  role: "user",
+  role: "",
 };
 
 export const userSlice = createSlice({
