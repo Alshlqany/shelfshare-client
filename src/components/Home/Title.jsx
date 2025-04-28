@@ -5,7 +5,7 @@ const Title = ({ title }) => {
 
   return (
     <div className="text-4xl font-light mb-10  border-b-1 w-fit pb-5 ">
-      <span className="text-[#2C9DB7] font-bold">{w1}</span> {w2}
+      <span className="text-primary font-bold">{w1}</span> {w2}
     </div>
   );
 };

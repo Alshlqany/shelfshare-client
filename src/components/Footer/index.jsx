@@ -3,7 +3,7 @@ import Content from "./Content";
 
 const Footer = () => {
   return (
-    <div className="relative bg-[#2C9DB7]">
+    <div className="relative bg-primary">
       <div
         className="relative h-100 mt-5 container mx-auto"
         style={{

@@ -20,7 +20,7 @@ const Input = ({
       <div
         className={`flex border p-1 ${
           isError ? "border-red-500" : "border-gray-300"
-        } rounded-lg focus-within:ring-2 focus-within:ring-[#2C9DB7] focus-within:border-transparent`}
+        } rounded-lg focus-within:ring-2 focus-within:ring-primary focus-within:border-transparent`}
       >
         <input
           id={id}

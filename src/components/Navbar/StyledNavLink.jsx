@@ -11,7 +11,7 @@ const StyledNavLink = ({ to, text, icon }) => {
     <motion.div className="relative px-2 py-1 ">
       <NavLink
         to={to}
-        className={`flex items-center gap-1 font-medium hover:text-[#2C9DB7]  duration-300 text-gray-700 `}
+        className={`flex items-center gap-1 font-medium hover:text-primary  duration-300 text-gray-700 `}
         style={isActive ? { color: "#2C9DB7" } : {}}
       >
         {icon}

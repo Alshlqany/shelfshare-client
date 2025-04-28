@@ -45,7 +45,7 @@ const SendOtpButton = ({ email, error, isForResetPassword }) => {
     <button
       type="button"
       onClick={handleSendOtp}
-      className="p-2 cursor-pointer text-nowrap text-white rounded-md bg-[#2C9DB7] disabled:bg-gray-500 disabled:cursor-progress"
+      className="p-2 cursor-pointer text-nowrap text-white rounded-md bg-primary disabled:bg-gray-500 disabled:cursor-progress"
       disabled={loading1 || loading2 || timer > 0}
     >
       {timer ? `Resend (${timer})` : "Send"}

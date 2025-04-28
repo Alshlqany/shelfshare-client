@@ -63,21 +63,18 @@ const LoginForm = () => {
           <div className="flex flex-col space-y-2">
             <Link
               to="/reset-password"
-              className="text-sm text-[#2C9DB7] hover:underline"
+              className="text-sm text-primary hover:underline"
             >
               Forgot Password?
             </Link>
             <Link
               to="/verify-email"
-              className="text-sm text-[#2C9DB7] hover:underline"
+              className="text-sm text-primary hover:underline"
             >
               Verify email?
             </Link>
           </div>
-          <Link
-            to="/register"
-            className="text-sm text-[#2C9DB7] hover:underline"
-          >
+          <Link to="/register" className="text-sm text-primary hover:underline">
             Create new account
           </Link>
         </div>

@@ -17,7 +17,7 @@ const HeroSection = () => {
       >
         <h1 className="text-3xl md:text-5xl font-bold leading-tight">
           Discover Your Next Favorite Book on
-          <span className="text-[#2C9DB7]"> ShelfShare</span>
+          <span className="text-primary"> ShelfShare</span>
         </h1>
         <p className="text-gray-500 text-lg">
           From timeless classics to trending bestsellers — explore, share, and
@@ -25,7 +25,7 @@ const HeroSection = () => {
         </p>
         <Link
           to="/shop"
-          className="bg-[#2C9DB7] text-white rounded-full px-6 py-3 text-lg shadow-lg hover:bg-[#238ca3] transition"
+          className="bg-primary text-white rounded-full px-6 py-3 text-lg shadow-lg hover:bg-[#238ca3] transition"
         >
           Browse Collection
         </Link>

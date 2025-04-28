@@ -45,7 +45,7 @@ const Parallax = () => {
   }, []);
 
   return (
-    <div className="bg-[#2C9DB7]">
+    <div className="bg-primary">
       <div
         ref={container}
         className=" h-[175vh] flex  gap-[2vw] justify-center box-border mt-20 overflow-hidden"

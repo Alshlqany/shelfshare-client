@@ -7,7 +7,7 @@ const Button = ({ isActive, setIsActive }) => {
   return (
     <div
       onClick={() => setIsActive((prev) => !prev)}
-      className="overflow-hidden h-fit w-fit rounded-full cursor-pointer hover:text-[#2C9DB7]  duration-300 text-gray-700"
+      className="overflow-hidden h-fit w-fit rounded-full cursor-pointer hover:text-primary  duration-300 text-gray-700"
     >
       <motion.div
         className="relative h-fit w-fit"

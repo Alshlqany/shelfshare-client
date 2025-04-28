@@ -2,7 +2,7 @@ import React from "react";
 
 const Content = () => {
   return (
-    <div className="relative h-full bg-[#2C9DB7] text-white px-5 py-16 flex flex-col md:flex-row justify-between items-start overflow-hidden">
+    <div className="relative h-full bg-primary text-white px-5 py-16 flex flex-col md:flex-row justify-between items-start overflow-hidden">
       <div className="flex-1 space-y-6">
         <h3 className="text-2xl font-bold">About Us</h3>
         <p className="text-gray-200 md:max-w-[50%]">

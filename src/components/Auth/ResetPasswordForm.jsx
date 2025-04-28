@@ -74,7 +74,7 @@ const ResetPasswordForm = () => {
           value={formik.values.newPassword}
           placeholder="Enter your password"
         />
-        <Link to="/login" className="text-sm text-[#2C9DB7] hover:underline">
+        <Link to="/login" className="text-sm text-primary hover:underline">
           Go To Login?
         </Link>
         <SubmitButton disabled={formik.isSubmitting || isLoading}>

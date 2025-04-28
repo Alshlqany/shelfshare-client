@@ -66,7 +66,7 @@ const VerifyEmailForm = () => {
           touched={formik.touched.otp}
         />
 
-        <Link to="/login" className="text-sm text-[#2C9DB7] hover:underline">
+        <Link to="/login" className="text-sm text-primary hover:underline">
           Go To Login?
         </Link>
 
