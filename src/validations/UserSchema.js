@@ -13,6 +13,33 @@ export const loginSchema = yup.object().shape({
     )
     .required("Password is required"),
 });
+export const resetPasswordSchema = yup.object().shape({
+  email: yup.string().email("Invalid email").required("Email is required"),
+  newPassword: yup
+    .string()
+    .min(8, "Password must be at least 8 characters")
+    .uppercase("Password must contain at least one uppercase letter")
+    .lowercase("Password must contain at least one lowercase letter")
+    .matches(/[0-9]/, "Password must contain at least one number")
+    .matches(
+      /[!@#$%^&*]/,
+      "Password must contain at least one special character"
+    )
+    .required("Password is required"),
+  otp: yup
+    .string()
+    .required("OTP is required")
+    .min(6, "OTP must be 6 digits")
+    .max(6, "OTP must be 6 digits"),
+});
+export const verifyEmailSchema = yup.object().shape({
+  email: yup.string().email("Invalid email").required("Email is required"),
+  otp: yup
+    .string()
+    .required("OTP is required")
+    .min(6, "OTP must be 6 digits")
+    .max(6, "OTP must be 6 digits"),
+});
 
 // const userSchema = new mongoose.Schema(
 //     {
