@@ -33,7 +33,10 @@ const RegisterForm = () => {
 
   return (
     <FormContainer title="Create an Account">
-      <form className="flex flex-col space-y-6" onSubmit={formik.handleSubmit}>
+      <form
+        className="flex flex-col space-y-4 md:space-y-6"
+        onSubmit={formik.handleSubmit}
+      >
         <Input
           label="Name"
           error={formik.errors.name}
