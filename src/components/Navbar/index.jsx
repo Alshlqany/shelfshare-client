@@ -11,8 +11,17 @@ import MobileNav from "./MobileNav";
 import CartIcon from "./CartIcon";
 import { motion } from "framer-motion";
 import User from "./User";
-
+import { useDispatch } from "react-redux";
+import { setUser } from "../../app/features/userSlice";
 const Navbar = () => {
+  const dispatch = useDispatch();
+  const token = localStorage.getItem("token");
+
+  React.useEffect(() => {
+    if (token) {
+      dispatch(setUser(token));
+    }
+  }, [dispatch, token]);
   return (
     <header className="bg-[#f2fdff] w-full fixed top-0 left-0 z-50">
       <motion.div className="container mx-auto px-5 py-2 w-full">

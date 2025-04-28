@@ -3,7 +3,7 @@ import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 export const adminApi = createApi({
   reducerPath: "adminApi",
   baseQuery: fetchBaseQuery({
-    baseUrl: "http://localhost:5000/api",
+    baseUrl: "https://shelfshare-v2.vercel.app/api",
     prepareHeaders: (headers, { getState }) => {
       // Get the token from Redux state
       const token = getState().user?.token;
@@ -17,7 +17,7 @@ export const adminApi = createApi({
   }),
   endpoints: (builder) => ({
     getStatistics: builder.query({
-      query: ( params ) => {
+      query: (params) => {
         const qParams = new URLSearchParams(params);
         return `stats?${qParams.toString()}`;
       },

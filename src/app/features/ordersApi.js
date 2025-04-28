@@ -12,7 +12,7 @@ const buildQueryParams = (params) =>
 export const ordersApi = createApi({
   reducerPath: "ordersApi",
   baseQuery: fetchBaseQuery({
-    baseUrl: "http://localhost:5000/api",
+    baseUrl: "https://shelfshare-v2.vercel.app/api",
     prepareHeaders: (headers, { getState }) => {
       const token = getState().user?.token;
       if (token) headers.set("Authorization", `Bearer ${token}`);

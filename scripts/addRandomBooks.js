@@ -1,7 +1,7 @@
 import axios from "axios";
 import { faker } from "@faker-js/faker";
 
-const API_URL = "http://localhost:5000/api/book";
+const API_URL = "https://shelfshare-v2.vercel.app/api/book";
 const NUMBER_OF_BOOKS = 100;
 const TOKEN =
   "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4MDY0MjU3NzY2ZjBkMTljZDEzNGQxZCIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTc0NTM5MzM1MSwiZXhwIjoxNzQ3OTg1MzUxfQ.8sKuU-L2PO0uCLeUc270mF-LzDMe0PUwuK_3CosSQrM";

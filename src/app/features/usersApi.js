@@ -3,7 +3,7 @@ import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 export const usersApi = createApi({
   reducerPath: "usersApi",
   baseQuery: fetchBaseQuery({
-    baseUrl: "http://localhost:5000/api",
+    baseUrl: "https://shelfshare-v2.vercel.app/api",
     prepareHeaders: (headers, { getState }) => {
       const token = getState().user?.token;
       if (token) {

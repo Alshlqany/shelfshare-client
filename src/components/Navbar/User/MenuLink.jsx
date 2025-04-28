@@ -2,6 +2,8 @@ import React from "react";
 import { Link } from "react-router-dom";
 // eslint-disable-next-line no-unused-vars
 import { motion } from "framer-motion";
+import { useDispatch } from "react-redux";
+import { logout } from "../../../app/features/userSlice";
 
 const prespective = {
   initial: {
@@ -30,9 +32,13 @@ const prespective = {
   },
 };
 
-const MenuLink = ({ to, idx, label, icon }) => {
+const MenuLink = ({ to, idx, label, icon, logout: out }) => {
+  const dispatch = useDispatch();
+  const handleLogout = () => {
+    dispatch(logout());
+  };
   return (
-    <div className="perspective-[120px]">
+    <div className="perspective-[120px] ">
       <motion.div
         variants={prespective}
         animate="enter"
@@ -42,9 +48,16 @@ const MenuLink = ({ to, idx, label, icon }) => {
         className="flex items-center justify-start gap-2 hover:text-[#c5f4ff] transition-colors duration-300 cursor-pointer"
       >
         {icon}
-        <Link to={to} className="user-menu-link w-full">
-          {label}
-        </Link>
+        {out && (
+          <div className="user-menu-link w-full" onClick={handleLogout}>
+            {label}
+          </div>
+        )}
+        {!out && (
+          <Link to={to} className="user-menu-link w-full">
+            {label}
+          </Link>
+        )}
       </motion.div>
     </div>
   );

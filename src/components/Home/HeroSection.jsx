@@ -11,7 +11,7 @@ const HeroSection = () => {
       style={{ minHeight: "calc(100vh - 80px)" }}
     >
       <motion.div
-        className="flex flex-col items-start text-left md:w-1/2 space-y-6"
+        className="flex flex-col items-start text-left md:w-1/2  space-y-6"
         initial={{ x: -500 }}
         animate={{ x: 0 }}
       >
