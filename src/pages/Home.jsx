@@ -10,11 +10,10 @@ const Home = () => {
         <HeroSection />
       </div>
       <Parallax />
-      <div className="container mx-auto px-10">
-        <TopBooks />
-        <TopBooks title="New Arrivals" filterId="new" />
-        <TopBooks title="Top Rated" filterId="rate" />
-      </div>
+
+      <TopBooks />
+      <TopBooks title="New Arrivals" filterId="new" />
+      <TopBooks title="Top Rated" filterId="rate" />
       <Footer />
     </div>
   );

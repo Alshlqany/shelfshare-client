@@ -10,7 +10,7 @@ const Column = ({ images, y = 0 }) => {
     >
       {images.map((src, idx) => {
         return (
-          <div key={idx} className="w-[100%]  relative ">
+          <div key={idx} className="w-[100%] relative ">
             <img
               src={`/books/${src}`}
               className="rounded-2xl object-fit-cover"

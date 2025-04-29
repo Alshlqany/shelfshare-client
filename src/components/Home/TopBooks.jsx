@@ -1,15 +1,24 @@
-import React from "react";
+import React, { useRef } from "react";
 import Title from "./Title";
-import BooksSwipper from "./BooksSwiper";
+import BooksRow from "./BooksRow";
+import { useScroll, useTransform } from "framer-motion";
 
 const TopBooks = ({ filterId = "new", title = "Best selling" }) => {
+  const targetRef = useRef(null);
+  const { scrollYProgress } = useScroll({
+    target: targetRef,
+  });
+
+  const x = useTransform(scrollYProgress, [0, 1], ["45%", "-45%"]);
+
   return (
-    <div className="mt-15">
-      <div className="w-full flex justify-center">
+    <section ref={targetRef} className="relative h-[500vh]">
+      <div className="flex justify-center"></div>
+      <div className="sticky top-2/12 flex flex-col h-fit justify-center items-center overflow-hidden">
         <Title title={title} />
+        <BooksRow filterId={filterId} x={x} />
       </div>
-      <BooksSwipper filterId={filterId} />
-    </div>
+    </section>
   );
 };
 
