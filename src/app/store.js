@@ -6,6 +6,7 @@ import { adminApi } from "./features/adminApi";
 import { booksApi } from "./features/booksApi";
 import { usersApi } from "./features/usersApi";
 import { ordersApi } from "./features/ordersApi";
+import { favoritesApi } from "./features/favoritesApi";
 
 export const store = configureStore({
   reducer: {
@@ -16,6 +17,7 @@ export const store = configureStore({
     [booksApi.reducerPath]: booksApi.reducer,
     [usersApi.reducerPath]: usersApi.reducer,
     [ordersApi.reducerPath]: ordersApi.reducer,
+    [favoritesApi.reducerPath]: favoritesApi.reducer,
   },
   middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware().concat(
@@ -23,6 +25,7 @@ export const store = configureStore({
       adminApi.middleware,
       booksApi.middleware,
       usersApi.middleware,
-      ordersApi.middleware
+      ordersApi.middleware,
+      favoritesApi.middleware
     ),
 });

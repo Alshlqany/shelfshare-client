@@ -1,4 +1,5 @@
 import AddShoppingCartIcon from "@mui/icons-material/AddShoppingCart";
+// eslint-disable-next-line no-unused-vars
 import { motion } from "framer-motion";
 const AddToCart = () => {
   return (

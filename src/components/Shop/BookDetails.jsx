@@ -1,4 +1,5 @@
 import React from "react";
+// eslint-disable-next-line no-unused-vars
 import { motion } from "framer-motion";
 import BookRate from "./BookRate";
 import AddToFavorites from "./AddToFavorites";
@@ -17,7 +18,7 @@ const BookDetails = ({ book }) => {
         className="flex items-start justify-between"
       >
         <BookRate rate={book.rating} />
-        <AddToFavorites />
+        <AddToFavorites bookId={book._id} isFavorited={book.isFavorited} />
       </motion.div>
 
       <motion.div variants={childVariants} className="flex justify-between">
