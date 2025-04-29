@@ -9,28 +9,22 @@ const cartSlice = createSlice({
   initialState,
   reducers: {
     addItem: (state, action) => {
-      // {book:{image,name,price,id}, qty}
+      const { book, qty = 1 } = action.payload;
       const existingItem = state.items.find(
-        (item) => item.book.id === action.payload.book.id
+        (item) => item.book._id === book._id
       );
+
       if (existingItem) {
-        existingItem.qty += action.payload.qty;
-        return;
+        existingItem.qty += qty;
+      } else {
+        state.items.push({ book, qty });
       }
-      action.payload.qty = 1;
-      state.items.push(action.payload);
     },
     removeItem: (state, action) => {
       state.items = state.items.filter(
         (item) => item.book.id !== action.payload
       );
     },
-    // changeItemQty: (state, action) => {
-    //   // {bookId, qty}
-    //   const item = state.items.find(
-    //     (item) => item.book.id === action.payload.bookId
-    //   );
-    // },
   },
 });
 

@@ -12,8 +12,8 @@ const AddToFavorites = ({ bookId, isFavorited }) => {
   const handleToggle = async () => {
     try {
       setIsFav((prev) => !prev);
-      await toggleFavorite(bookId).unwrap();
-      toast.success("Book added to favorites");
+      const response = await toggleFavorite(bookId).unwrap();
+      toast.success(response.message);
     } catch (error) {
       toast.error(error.data.message);
       setIsFav((prev) => !prev);

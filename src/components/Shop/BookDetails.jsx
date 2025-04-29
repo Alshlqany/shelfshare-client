@@ -36,7 +36,7 @@ const BookDetails = ({ book }) => {
             {book.price}$
           </motion.p>
         </div>
-        <AddToCart />
+        <AddToCart book={book} />
       </motion.div>
     </>
   );
