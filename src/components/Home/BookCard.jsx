@@ -25,7 +25,7 @@ const BookCard = ({ book }) => {
     <div
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
-      className="rounded-2xl w-72 mx-4 shadow-xl cursor-pointer transition-transform border relative overflow-hidden"
+      className="rounded-2xl w-72 mx-4 shadow-xl cursor-pointer transition-transform  relative overflow-hidden"
     >
       <motion.div
         whileHover={{ scale: 1.07 }}

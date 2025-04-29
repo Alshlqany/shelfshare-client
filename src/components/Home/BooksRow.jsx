@@ -1,4 +1,5 @@
 import { useGetBooksQuery } from "../../app/features/booksApi";
+import BookCardSkeleton from "../Shop/BookCardSkeleton";
 import BookCard from "./BookCard";
 
 // eslint-disable-next-line no-unused-vars
@@ -27,7 +28,15 @@ const BooksRow = ({ filterId, x }) => {
   );
 
   if (isError) return <div>{error.message}</div>;
-  if (isLoading) return <div>Loading...</div>;
+  if (isLoading)
+    return (
+      <motion.div style={{ x }} className="flex">
+        {Array.from({ length: 10 }).map((_, idx) => (
+          <BookCardSkeleton key={idx} />
+        ))}
+      </motion.div>
+    );
+
   return (
     <motion.div style={{ x }} className="flex">
       {data?.books.map((book) => (
