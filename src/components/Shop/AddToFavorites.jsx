@@ -3,6 +3,7 @@ import { Heart } from "lucide-react";
 import { motion } from "framer-motion";
 import { useState } from "react";
 import { useToggleFavoriteMutation } from "../../app/features/favoritesApi";
+import toast from "react-hot-toast";
 
 const AddToFavorites = ({ bookId, isFavorited }) => {
   const [isFav, setIsFav] = useState(isFavorited);
@@ -13,7 +14,7 @@ const AddToFavorites = ({ bookId, isFavorited }) => {
       setIsFav((prev) => !prev);
       await toggleFavorite(bookId).unwrap();
     } catch (error) {
-      console.error("Failed to toggle favorite", error);
+      toast.error(error.data.message);
       setIsFav((prev) => !prev);
     }
   };
