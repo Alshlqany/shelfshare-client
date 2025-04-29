@@ -25,7 +25,7 @@ const AddToFavorites = ({ bookId, isFavorited }) => {
       onClick={handleToggle}
       whileTap={{ scale: 0.9 }}
       whileHover={{ scale: 1.1 }}
-      className="relative group p-2 rounded-full cursor-pointer transition-colors"
+      className="relative group cursor-pointer transition-colors"
     >
       <Heart
         className="transition-colors duration-300"

@@ -17,7 +17,12 @@ const BookDetails = ({ book }) => {
         variants={childVariants}
         className="flex items-start justify-between"
       >
-        <BookRate rate={book.rating} />
+        <BookRate
+          bookId={book._id}
+          rate={book.rating}
+          userRate={book.myRate}
+          canReview={book.canReview}
+        />
         <AddToFavorites bookId={book._id} isFavorited={book.isFavorited} />
       </motion.div>
 

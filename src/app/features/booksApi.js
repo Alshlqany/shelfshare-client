@@ -43,6 +43,13 @@ export const booksApi = createApi({
         body: formData,
       }),
     }),
+    reviewBook: builder.mutation({
+      query: ({ bookId, rate }) => ({
+        url: `book/review/${bookId}`,
+        method: "POST",
+        body: { rate: rate },
+      }),
+    }),
   }),
 });
 
@@ -51,4 +58,5 @@ export const {
   useEditBookMutation,
   useDeleteBookMutation,
   useAddBookMutation,
+  useReviewBookMutation,
 } = booksApi;
