@@ -6,9 +6,11 @@ This project is a React-based frontend application built with Vite. It serves as
 
 - **Responsive Navbar**: Includes animated tabs for navigation and a modern mobile menu.
 - **API Integration**: Communicates with backend APIs for books, users, orders, and authentication.
-- **State Management**: Utilizes Redux for managing application state.
-- **Modern UI**: Built with React and styled using CSS.
-- **Dynamic Animations**: Leverages Framer Motion for smooth animations.
+- **State Management**: Utilizes Redux Toolkit for managing application state efficiently.
+- **Modern UI**: Built with React and styled using CSS for a clean and responsive design.
+- **Dynamic Animations**: Leverages Framer Motion for smooth and interactive animations.
+- **Rating System**: Allows users to rate books with a dynamic 5-star rating component.
+- **Favorites and Cart Management**: Users can add books to their favorites or shopping cart.
 
 ## Getting Started
 
@@ -52,6 +54,20 @@ npm run build
 
 The build output will be in the `dist/` directory.
 
+### Linting and Formatting
+
+To check for linting issues:
+
+```bash
+npm run lint
+```
+
+To format code using Prettier:
+
+```bash
+npm run format
+```
+
 ## Project Structure
 
 ```
@@ -82,19 +98,61 @@ The build output will be in the `dist/` directory.
     ├── assets/
     │   └── logo.png
     ├── components/
-    │   └── Navbar/
-    │       ├── CartIcon.jsx
-    │       ├── index.jsx
-    │       ├── MobileNav.jsx
-    │       └── StyledNavLink.jsx
+    │   ├── Navbar/
+    │   │   ├── CartIcon.jsx
+    │   │   ├── index.jsx
+    │   │   ├── MobileNav.jsx
+    │   │   └── StyledNavLink.jsx
+    │   ├── Shop/
+    │   │   ├── BookRate.jsx
+    │   │   ├── BookDetails.jsx
+    │   │   ├── Stars.jsx
+    │   │   └── AddToCart.jsx
+    │   └── Shared/
+    │       └── Toast.jsx
     └── pages/
-        └── Home.jsx
+        ├── Home.jsx
+        ├── Shop.jsx
+        └── NotFound.jsx
 ```
+
+## API Endpoints
+
+The application communicates with the backend using the following API endpoints:
+
+- **Books API**: `/api/books`
+- **Users API**: `/api/users`
+- **Orders API**: `/api/orders`
+- **Authentication API**: `/api/auth`
 
 ## Contributing
 
-Contributions are welcome! Please fork the repository and submit a pull request.
+Contributions are welcome! Please follow these steps:
+
+1. Fork the repository.
+2. Create a new branch for your feature or bug fix:
+   ```bash
+   git checkout -b feature-name
+   ```
+3. Commit your changes:
+   ```bash
+   git commit -m "Add feature-name"
+   ```
+4. Push to your branch:
+   ```bash
+   git push origin feature-name
+   ```
+5. Submit a pull request.
 
 ## License
 
 This project is licensed under the MIT License.
+
+## Acknowledgments
+
+- **React**: For building the user interface.
+- **Vite**: For fast development and build tooling.
+- **Framer Motion**: For animations.
+- **Redux Toolkit**: For state management.
+- **Lucide React**: For icons.
+- **React Hot Toast**: For notifications.
