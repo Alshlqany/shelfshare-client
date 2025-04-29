@@ -14,6 +14,7 @@ const AddToFavorites = ({ bookId, isFavorited }) => {
       await toggleFavorite(bookId).unwrap();
     } catch (error) {
       console.error("Failed to toggle favorite", error);
+      setIsFav((prev) => !prev);
     }
   };
 
