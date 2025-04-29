@@ -14,7 +14,7 @@ const TopBooks = ({ filterId = "new", title = "Best selling" }) => {
   return (
     <section ref={targetRef} className="relative h-[500vh]">
       <div className="flex justify-center"></div>
-      <div className="sticky top-2/12 flex flex-col h-fit justify-center items-center overflow-hidden">
+      <div className="sticky top-3/12 flex flex-col h-fit justify-center items-center overflow-hidden mt-10">
         <Title title={title} />
         <BooksRow filterId={filterId} x={x} />
       </div>
