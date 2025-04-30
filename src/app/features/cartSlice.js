@@ -22,11 +22,23 @@ const cartSlice = createSlice({
     },
     removeItem: (state, action) => {
       state.items = state.items.filter(
-        (item) => item.book.id !== action.payload
+        (item) => item.book._id !== action.payload
       );
+    },
+    updateItemQty: (state, action) => {
+      const { bookId, qty } = action.payload;
+      const existingItem = state.items.find((item) => item.book._id === bookId);
+
+      if (existingItem) {
+        existingItem.qty = qty;
+      }
+    },
+    clearCart: (state) => {
+      state.items = [];
     },
   },
 });
 
-export const { addItem, removeItem } = cartSlice.actions;
+export const { addItem, removeItem, updateItemQty, clearCart } =
+  cartSlice.actions;
 export default cartSlice.reducer;

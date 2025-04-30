@@ -7,6 +7,7 @@ import ResetPassword from "./pages/ResetPassword";
 import VerifyEmail from "./pages/VerifyEmail";
 import UserLayout from "./components/Layouts/UserLayout";
 import AdminLayout from "./components/Layouts/AdminLayout";
+import Cart from "./pages/Cart";
 
 const router = createBrowserRouter([
   {
@@ -18,6 +19,7 @@ const router = createBrowserRouter([
       { path: "/register", element: <Register /> },
       { path: "/reset-password", element: <ResetPassword /> },
       { path: "/verify-email", element: <VerifyEmail /> },
+      { path: "/cart", element: <Cart /> },
       { path: "*", element: <NotFound /> },
     ],
   },

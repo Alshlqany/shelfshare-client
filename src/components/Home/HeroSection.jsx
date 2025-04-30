@@ -6,10 +6,7 @@ import { motion } from "framer-motion";
 
 const HeroSection = () => {
   return (
-    <section
-      className="flex flex-col-reverse md:flex-row items-center  px-5"
-      style={{ minHeight: "calc(100vh - 80px)" }}
-    >
+    <section className="flex flex-col-reverse md:flex-row items-center min-h-screen px-5">
       <motion.div
         className="flex flex-col items-start text-left md:w-1/2  space-y-6"
         initial={{ x: -500 }}
