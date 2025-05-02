@@ -16,14 +16,7 @@ const Categories = () => {
 
   const { data, isLoading, isError } = useGetCategoriesQuery();
 
-  if (isLoading)
-    return (
-      <Box sx={{ display: "flex", justifyContent: "center", mt: 2 }}>
-        <CircularProgress size={24} />
-      </Box>
-    );
-
-  if (isError || !data?.subCategories?.length)
+  if (isError)
     return <Box sx={{ color: "red", mt: 2 }}>Failed to load categories.</Box>;
 
   return (
@@ -39,19 +32,25 @@ const Categories = () => {
       size="small"
     >
       <InputLabel id="category-label">Category</InputLabel>
+
       <Select
         labelId="category-label"
         id="category"
         label="Category"
         defaultValue=""
         onChange={handleChange}
+        disabled={isLoading}
       >
-        <MenuItem value="">All</MenuItem>
-        {data.subCategories.map((cat, idx) => (
-          <MenuItem key={idx} value={cat}>
-            {cat}
-          </MenuItem>
-        ))}
+        {!isLoading && (
+          <>
+            <MenuItem value="">All</MenuItem>
+            {data.subCategories.map((cat, idx) => (
+              <MenuItem key={idx} value={cat}>
+                {cat}
+              </MenuItem>
+            ))}
+          </>
+        )}
       </Select>
     </FormControl>
   );

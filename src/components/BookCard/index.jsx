@@ -46,11 +46,11 @@ const BookCard = ({ book }) => {
         transition={{ duration: 0.3 }}
       >
         {book.qty > 0 ? (
-          <span className="bg-green-100 text-green-800 text-xs font-medium me-2 px-2.5 py-0.5 rounded-full dark:bg-green-900 dark:text-green-200 ">
+          <span className="bg-green-100 text-green-800 text-xs font-medium me-2 px-2.5 py-0.5 rounded-full dark:bg-green-700 dark:text-green-200 ">
             In Stock ({book.qty})
           </span>
         ) : (
-          <span className="bg-red-100 text-red-800 text-xs font-medium me-2 px-2.5 py-0.5 rounded-full dark:bg-red-900 dark:text-red-200 ">
+          <span className="bg-red-100 text-red-800 text-xs font-medium me-2 px-2.5 py-0.5 rounded-full dark:bg-red-700 dark:text-red-200 ">
             Out of Stock
           </span>
         )}
