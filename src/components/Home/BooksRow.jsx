@@ -31,7 +31,7 @@ const BooksRow = ({ filterId, x }) => {
   if (isError) return <div>{error.message}</div>;
   if (isLoading)
     return (
-      <motion.div style={{ x }} className="flex">
+      <motion.div style={{ x }} className="flex gap-5">
         {Array.from({ length: 10 }).map((_, idx) => (
           <BookCardSkeleton key={idx} />
         ))}

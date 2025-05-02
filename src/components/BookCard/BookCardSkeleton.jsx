@@ -4,7 +4,7 @@ import { Heart, StarIcon } from "lucide-react";
 
 const BookCardSkeleton = () => {
   return (
-    <div className="rounded-2xl w-51 mx-4 shadow-xl  relative overflow-hidden animate-pulse">
+    <div className="rounded-2xl w-51 shadow-xl relative overflow-hidden animate-pulse">
       <div className="h-72 w-full bg-gray-100" />
 
       <motion.div className="absolute top-0 left-0 h-full w-full p-4 flex flex-col justify-between text-white bg-black/10 rounded-2xl">

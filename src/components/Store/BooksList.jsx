@@ -27,8 +27,8 @@ const BooksList = () => {
 
   if (isLoading)
     return (
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5 gap-4 pt-5 md:pt-0 ">
-        {Array.from({ length: 12 }).map((_, idx) => (
+      <div className="grid grid-cols-[repeat(auto-fit,minmax(120px,1fr))] sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5 gap-4 pt-5 md:pt-0 ">
+        {Array.from({ length: 15 }).map((_, idx) => (
           <BookCardSkeleton key={idx} />
         ))}
       </div>
@@ -36,7 +36,7 @@ const BooksList = () => {
 
   if (isError || data?.books.length === 0) return <NoBooksFound />;
   return (
-    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5 gap-4 pt-5 md:pt-0 ">
+    <div className="grid grid-cols-[repeat(auto-fit,minmax(120px,1fr))] sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5 gap-4 pt-5 md:pt-0 ">
       {data?.books.map((book) => (
         <BookCard book={book} key={book._id} />
       ))}

@@ -3,7 +3,7 @@ import { createSlice } from "@reduxjs/toolkit";
 const initialState = {
   filters: {
     page: 1,
-    limit: 12,
+    limit: 15,
     sort: "title",
   },
   totalPages: 1,

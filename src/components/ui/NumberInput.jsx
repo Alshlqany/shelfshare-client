@@ -59,7 +59,11 @@ export function Input({ value = 0, min = -Infinity, max = Infinity, bookId }) {
         disabled={value <= min}
         onPointerDown={handlePointerDown(-1)}
       >
-        <Minus className="size-4" absoluteStrokeWidth strokeWidth={3.5} />
+        <Minus
+          className="size-4 cursor-pointer"
+          absoluteStrokeWidth
+          strokeWidth={3.5}
+        />
       </button>
 
       <div className="relative grid items-center justify-items-center text-center [grid-template-areas:'overlap'] *:[grid-area:overlap]">
@@ -96,7 +100,7 @@ export function Input({ value = 0, min = -Infinity, max = Infinity, bookId }) {
         disabled={value >= max}
         onPointerDown={handlePointerDown(1)}
       >
-        <Plus className="size-4" absoluteStrokeWidth strokeWidth={3.5} />
+        <Plus className="size-4 cursor-pointer" absoluteStrokeWidth strokeWidth={3.5} />
       </button>
     </div>
   );

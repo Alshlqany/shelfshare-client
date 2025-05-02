@@ -34,9 +34,8 @@ const CartItem = ({ item }) => {
         <div className="flex flex-col justify-between items-end">
           <RemoveButton bookId={book._id} />
           <div className=" flex flex-col items-end">
-            <p className="text-xs md:text-sm text-gray-600">
-              <span className="text-gray-500">Item:</span> $
-              {book.price.toFixed(2)}
+            <p className="text-xs md:text-sm text-gray-500 flex items-center">
+              Item: {book.price.toFixed(2)} EGP
             </p>
             <p className="text-sm md:text-lg font-bold text-primary mt-1 ">
               {totalPrice} EGP

@@ -26,7 +26,9 @@ const BookDetails = ({ book }) => {
         className="flex justify-between items-center"
       >
         <div>
-          <motion.h4 variants={childVariants}>{book.title}</motion.h4>
+          <motion.h4 variants={childVariants} className="font-bold">
+            {book.title}
+          </motion.h4>
           <motion.p variants={childVariants} className="text-xs text-gray-200">
             {book.mainCategory} <span className="opacity-80"> • </span>
             {book.subCategory}

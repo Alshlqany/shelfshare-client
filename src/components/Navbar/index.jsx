@@ -26,7 +26,10 @@ const Navbar = () => {
     <header className="bg-[#f2fdff] w-full fixed top-0 left-0 z-50">
       <motion.div className="container mx-auto px-5 py-2 w-full">
         <nav className="flex justify-between items-center h-20">
-          <Link to="/">
+          <Link
+            to="/"
+            className="h-full overflow-hidden flex items-center justify-center"
+          >
             <motion.img
               src={logo}
               alt="logo"
