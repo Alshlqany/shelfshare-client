@@ -27,7 +27,7 @@ const CartItem = ({ item }) => {
 
           <div className="flex items-center gap-3">
             <span className="text-sm text-gray-600 font-medium">Qty:</span>
-            <Input value={qty} min={1} max={99} bookId={book._id} />
+            <Input value={qty} min={1} max={book.qty} bookId={book._id} />
           </div>
         </div>
 

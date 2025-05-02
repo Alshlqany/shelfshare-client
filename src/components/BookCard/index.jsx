@@ -39,6 +39,22 @@ const BookCard = ({ book }) => {
           className="w-full h-full object-cover pointer-events-none"
         />
       </motion.div>
+      <motion.div
+        className="absolute top-0 left-0 p-2 flex flex-col justify-between text-white"
+        initial={{ opacity: 0, y: -20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.3 }}
+      >
+        {book.qty > 0 ? (
+          <span className="bg-green-100 text-green-800 text-xs font-medium me-2 px-2.5 py-0.5 rounded-full dark:bg-green-900 dark:text-green-200 ">
+            In Stock ({book.qty})
+          </span>
+        ) : (
+          <span className="bg-red-100 text-red-800 text-xs font-medium me-2 px-2.5 py-0.5 rounded-full dark:bg-red-900 dark:text-red-200 ">
+            Out of Stock
+          </span>
+        )}
+      </motion.div>
 
       <motion.div
         variants={overlayVariants}

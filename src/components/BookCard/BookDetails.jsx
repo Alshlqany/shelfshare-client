@@ -30,13 +30,13 @@ const BookDetails = ({ book }) => {
             {book.title}
           </motion.h3>
           <motion.p variants={childVariants} className="text-sm text-gray-200">
-            {book.mainCategory}, {book.subCategory}
+            {book.mainCategory} • {book.subCategory}
           </motion.p>
           <motion.p variants={childVariants} className="text-md font-semibold">
             {book.price} EGP
           </motion.p>
         </div>
-        <AddToCart book={book} />
+        {book.qty > 0 && <AddToCart book={book} />}
       </motion.div>
     </>
   );

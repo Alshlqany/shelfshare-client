@@ -3,7 +3,7 @@ import BooksRow from "./BooksRow";
 import { useScroll, useTransform } from "framer-motion";
 import Title from "../ui/Title";
 
-const TopBooks = ({ filterId = "new", title = "Best selling" }) => {
+const TopBooks = ({ filterId = "best", title = "Best selling" }) => {
   const targetRef = useRef(null);
   const { scrollYProgress } = useScroll({
     target: targetRef,

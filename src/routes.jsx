@@ -11,6 +11,8 @@ import Cart from "./pages/Cart";
 import BooksLayout from "./components/Store";
 import BooksList from "./components/Store/BooksList";
 import Success from "./pages/sucess";
+import Cancel from "./pages/Cancel";
+import Favorites from "./pages/Favorites";
 
 const router = createBrowserRouter([
   {
@@ -34,7 +36,9 @@ const router = createBrowserRouter([
           },
         ],
       },
+      { path: "/favorites", element: <Favorites /> },
       { path: "success", element: <Success /> },
+      { path: "cancel", element: <Cancel /> },
       { path: "*", element: <NotFound /> },
     ],
   },

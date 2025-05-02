@@ -9,8 +9,9 @@ const filters = {
   new: {
     page: 1,
     limit: 10,
+    sort: "-createdAt",
   },
-  popular: {
+  best: {
     page: 1,
     limit: 10,
     sort: "-soldTimes",

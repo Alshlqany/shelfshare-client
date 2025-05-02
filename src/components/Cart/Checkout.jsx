@@ -19,7 +19,7 @@ const Checkout = () => {
       const response = await checkout(mappedItems).unwrap();
       window.location.href = response?.url;
     } catch (error) {
-      toast.error("Checkout failed:", error?.data?.message);
+      toast.error(error?.data?.message);
     }
   };
   return (
