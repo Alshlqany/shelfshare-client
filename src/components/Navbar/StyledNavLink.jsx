@@ -21,7 +21,7 @@ const StyledNavLink = ({ to, text, icon }) => {
       {isActive && (
         <motion.div
           layoutId="underline"
-          className="absolute left-0 bottom-0 h-[2px] w-full rounded"
+          className="left-0 bottom-0 h-[2px] w-full rounded"
           transition={{ type: "tween", stiffness: 400, damping: 25 }}
           style={{ backgroundColor: "#2C9DB7" }}
         />

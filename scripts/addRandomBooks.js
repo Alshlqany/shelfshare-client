@@ -1,24 +1,26 @@
 import axios from "axios";
 import { faker } from "@faker-js/faker";
+import fs from "fs";
+import FormData from "form-data";
 
 const API_URL = "https://shelfshare-v2.vercel.app/api/book";
-const NUMBER_OF_BOOKS = 100;
+const NUMBER_OF_BOOKS = 25;
 const TOKEN =
-  "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4MDY0MjU3NzY2ZjBkMTljZDEzNGQxZCIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTc0NTM5MzM1MSwiZXhwIjoxNzQ3OTg1MzUxfQ.8sKuU-L2PO0uCLeUc270mF-LzDMe0PUwuK_3CosSQrM";
+  "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4MDY0MjU3NzY2ZjBkMTljZDEzNGQxZCIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTc0NjA1Mjk5OCwiZXhwIjoxNzQ4NjQ0OTk4fQ.At9L6LFryv82Ys_hmnZvrI9Xh7oS_voxcBB_2T9NZ60";
 
-const mainCategories = ["English", "Arabic", "Kids-Arabic", "Kids-English"];
-
+const mainCategories = ["English", "Arabic", "Kids"];
+const imagePath =
+  "/media/alshlkany/Shared/ShelfShare-client/public/books/book_2.png";
 const generateRandomBook = () => {
   return {
     title: faker.book.title(),
     description: faker.lorem.sentences(2),
     mainCategory: faker.helpers.arrayElement(mainCategories),
     subCategory: faker.book.genre(),
-    price: faker.commerce.price(10, 100, 2),
+    price: faker.commerce.price(10, 100, 0),
     ISBN: faker.commerce.isbn(),
     author: faker.book.author(),
     qty: faker.number.int({ min: 1, max: 50 }),
-    image: faker.image.urlLoremFlickr(),
   };
 };
 
@@ -37,16 +39,12 @@ const addRandomBooks = async () => {
       formData.append("author", book.author);
       formData.append("qty", book.qty);
 
-      const response = await axios.get(book.image, {
-        responseType: "arraybuffer",
-      });
-      const blob = new Blob([response.data], { type: "image/jpeg" });
-      const file = new File([blob], "book.jpg", { type: "image/jpeg" });
-      formData.append("image", file);
+      const fileStream = fs.createReadStream(imagePath);
+      formData.append("image", fileStream, "book.jpg");
 
       await axios.post(API_URL, formData, {
         headers: {
-          "Content-Type": "multipart/form-data",
+          ...formData.getHeaders(),
           Authorization: `Bearer ${TOKEN}`,
         },
       });
@@ -54,7 +52,7 @@ const addRandomBooks = async () => {
       console.log(`Book-${i + 1}: ${book.title}`);
     }
   } catch (err) {
-    console.error(err);
+    console.error(err.response.data.message);
   }
 };
 

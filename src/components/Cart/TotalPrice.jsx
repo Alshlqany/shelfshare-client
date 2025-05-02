@@ -11,7 +11,11 @@ const TotalPrice = () => {
   if (totalPrice === 0) {
     return null;
   }
-  return <div className="text-lg ">Total: {totalPrice.toFixed(2)} EGP</div>;
+  return (
+    <div className="text-lg font-bold text-primary ">
+      Total: {totalPrice.toFixed(2)} EGP
+    </div>
+  );
 };
 
 export default TotalPrice;

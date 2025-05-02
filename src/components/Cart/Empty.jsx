@@ -20,7 +20,7 @@ const Empty = () => {
 
       <div>
         <Link
-          to="/shop"
+          to="/books"
           className="px-8 py-3 bg-primary text-white rounded-full shadow-md hover:bg-[#238ca3] transition-transform transform hover:scale-105"
         >
           Shop Now

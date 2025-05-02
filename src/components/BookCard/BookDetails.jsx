@@ -17,12 +17,7 @@ const BookDetails = ({ book }) => {
         variants={childVariants}
         className="flex items-start justify-between"
       >
-        <BookRate
-          bookId={book._id}
-          rate={book.rating}
-          userRate={book.myRate}
-          canReview={book.canReview}
-        />
+        <BookRate bookId={book._id} rate={book.rate} />
         <AddToFavorites bookId={book._id} isFavorited={book.isFavorited} />
       </motion.div>
 
@@ -38,7 +33,7 @@ const BookDetails = ({ book }) => {
             {book.mainCategory}, {book.subCategory}
           </motion.p>
           <motion.p variants={childVariants} className="text-md font-semibold">
-            {book.price}$
+            {book.price} EGP
           </motion.p>
         </div>
         <AddToCart book={book} />

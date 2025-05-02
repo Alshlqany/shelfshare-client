@@ -10,6 +10,7 @@ import AdminLayout from "./components/Layouts/AdminLayout";
 import Cart from "./pages/Cart";
 import BooksLayout from "./components/Store";
 import BooksList from "./components/Store/BooksList";
+import Success from "./pages/sucess";
 
 const router = createBrowserRouter([
   {
@@ -33,6 +34,7 @@ const router = createBrowserRouter([
           },
         ],
       },
+      { path: "success", element: <Success /> },
       { path: "*", element: <NotFound /> },
     ],
   },

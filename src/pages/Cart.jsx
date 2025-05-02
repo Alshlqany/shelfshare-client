@@ -9,7 +9,7 @@ const Cart = () => {
       style={{ minHeight: "calc(100vh - 80px)" }}
     >
       <CartItems />
-      <div className="flex justify-between mt-3">
+      <div className="flex justify-between mt-3 items-end p-1">
         <TotalPrice />
         <Checkout />
       </div>

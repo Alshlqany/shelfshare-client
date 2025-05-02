@@ -40,7 +40,7 @@ const BooksRow = ({ filterId, x }) => {
   return (
     <motion.div style={{ x }} className="flex">
       {data?.books.map((book) => (
-        <BookCard book={book} />
+        <BookCard book={book} key={book._id} />
       ))}
     </motion.div>
   );

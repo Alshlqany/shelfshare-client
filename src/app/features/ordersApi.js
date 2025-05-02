@@ -29,7 +29,15 @@ export const ordersApi = createApi({
     getOrder: builder.query({
       query: (orderId) => `/order/${orderId}`,
     }),
+    checkout: builder.mutation({
+      query: (booksData) => ({
+        url: "/order/checkout",
+        method: "POST",
+        body: { books: booksData },
+      }),
+    }),
   }),
 });
 
-export const { useGetOrdersQuery, useGetOrderQuery } = ordersApi;
+export const { useGetOrdersQuery, useGetOrderQuery, useCheckoutMutation } =
+  ordersApi;

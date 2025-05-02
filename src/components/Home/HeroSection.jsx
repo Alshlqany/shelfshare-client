@@ -21,7 +21,7 @@ const HeroSection = () => {
           fall in love with books all over again.
         </p>
         <Link
-          to="/shop"
+          to="/books"
           className="bg-primary text-white rounded-full px-6 py-3 text-lg shadow-lg hover:bg-[#238ca3] transition"
         >
           Browse Collection
