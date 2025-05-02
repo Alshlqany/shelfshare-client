@@ -1,6 +1,6 @@
 import { useGetBooksQuery } from "../../app/features/booksApi";
-import BookCardSkeleton from "../Shop/BookCardSkeleton";
-import BookCard from "./BookCard";
+import BookCardSkeleton from "../BookCard/BookCardSkeleton";
+import BookCard from "../BookCard";
 
 // eslint-disable-next-line no-unused-vars
 import { motion } from "framer-motion";

@@ -25,3 +25,7 @@ body {
 @theme {
   --color-primary: #2c9db7;
 }
+
+.scroll-hidden::-webkit-scrollbar {
+  display: none;
+}

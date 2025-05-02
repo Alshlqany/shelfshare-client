@@ -63,9 +63,9 @@ const MobileNav = () => {
                 className="w-fit"
               >
                 <StyledNavLink
-                  to="/shop"
+                  to="/books"
                   icon={<StorefrontIcon />}
-                  text="Shop"
+                  text="Books"
                 />
               </motion.div>
               <motion.div

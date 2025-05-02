@@ -7,11 +7,13 @@ import { booksApi } from "./features/booksApi";
 import { usersApi } from "./features/usersApi";
 import { ordersApi } from "./features/ordersApi";
 import { favoritesApi } from "./features/favoritesApi";
+import FilterReducer from "./FiltersSlice";
 
 export const store = configureStore({
   reducer: {
     user: userReducer,
     cart: cartReducer,
+    booksFilters: FilterReducer,
     [authApi.reducerPath]: authApi.reducer,
     [adminApi.reducerPath]: adminApi.reducer,
     [booksApi.reducerPath]: booksApi.reducer,

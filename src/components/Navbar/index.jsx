@@ -41,7 +41,7 @@ const Navbar = () => {
             className="hidden md:flex gap-4"
           >
             <StyledNavLink to="/" icon={<HomeIcon />} text="Home" />
-            <StyledNavLink to="/shop" icon={<StorefrontIcon />} text="Shop" />
+            <StyledNavLink to="/books" icon={<StorefrontIcon />} text="Books" />
             <StyledNavLink
               to="/contact-us"
               icon={<MailOutlineIcon />}

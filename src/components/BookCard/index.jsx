@@ -2,7 +2,7 @@ import { useState } from "react";
 // eslint-disable-next-line no-unused-vars
 import { motion } from "framer-motion";
 
-import BookDetails from "../Shop/BookDetails";
+import BookDetails from "./BookDetails";
 
 const overlayVariants = {
   hidden: { opacity: 0, y: 40 },
@@ -25,11 +25,11 @@ const BookCard = ({ book }) => {
     <div
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
-      className="rounded-2xl w-72 mx-4 shadow-xl cursor-pointer transition-transform  relative overflow-hidden"
+      className="rounded-2xl w-51 mx-4 shadow-xl cursor-pointer transition-transform  relative overflow-hidden"
     >
       <motion.div
         whileHover={{ scale: 1.07 }}
-        className="h-96 w-full transition-transform duration-300"
+        className="h-70 w-full transition-transform duration-300"
       >
         <motion.img
           animate={isHovered ? { scale: 1.07 } : { scale: 1 }}
