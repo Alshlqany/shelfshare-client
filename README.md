@@ -2,6 +2,8 @@
 
 This project is a React-based frontend application built with Vite. It serves as the user interface for the ShelfShare platform, providing features like browsing books, managing a shopping cart, and user authentication.
 
+---
+
 ## Features
 
 - **Responsive Navbar**: Includes animated tabs for navigation and a modern mobile menu.
@@ -11,6 +13,9 @@ This project is a React-based frontend application built with Vite. It serves as
 - **Dynamic Animations**: Leverages Framer Motion for smooth and interactive animations.
 - **Rating System**: Allows users to rate books with a dynamic 5-star rating component.
 - **Favorites and Cart Management**: Users can add books to their favorites or shopping cart.
+- **Pagination**: Provides a user-friendly pagination system for navigating through book collections.
+
+---
 
 ## Getting Started
 
@@ -34,6 +39,8 @@ This project is a React-based frontend application built with Vite. It serves as
    npm install
    ```
 
+---
+
 ### Running the Application
 
 Start the development server:
@@ -44,6 +51,8 @@ npm run dev
 
 The application will be available at `http://localhost:5173`.
 
+---
+
 ### Building for Production
 
 To create a production build:
@@ -53,6 +62,8 @@ npm run build
 ```
 
 The build output will be in the `dist/` directory.
+
+---
 
 ### Linting and Formatting
 
@@ -67,6 +78,8 @@ To format code using Prettier:
 ```bash
 npm run format
 ```
+
+---
 
 ## Project Structure
 
@@ -108,13 +121,17 @@ npm run format
     │   │   ├── BookDetails.jsx
     │   │   ├── Stars.jsx
     │   │   └── AddToCart.jsx
-    │   └── Shared/
-    │       └── Toast.jsx
+    │   ├── Cart/
+    │   │   └── Empty.jsx
+    │   ├── Store/
+    │   │   └── Pagination.jsx
     └── pages/
         ├── Home.jsx
         ├── Shop.jsx
         └── NotFound.jsx
 ```
+
+---
 
 ## API Endpoints
 
@@ -124,6 +141,8 @@ The application communicates with the backend using the following API endpoints:
 - **Users API**: `/api/users`
 - **Orders API**: `/api/orders`
 - **Authentication API**: `/api/auth`
+
+---
 
 ## Contributing
 
@@ -144,9 +163,13 @@ Contributions are welcome! Please follow these steps:
    ```
 5. Submit a pull request.
 
+---
+
 ## License
 
 This project is licensed under the MIT License.
+
+---
 
 ## Acknowledgments
 
@@ -156,3 +179,13 @@ This project is licensed under the MIT License.
 - **Redux Toolkit**: For state management.
 - **Lucide React**: For icons.
 - **React Hot Toast**: For notifications.
+- **Material-UI**: For the pagination component.
+
+---
+
+## Future Enhancements
+
+- Add search functionality for books.
+- Implement user profile management.
+- Enhance accessibility for all components.
+- Add unit and integration tests for critical features.
