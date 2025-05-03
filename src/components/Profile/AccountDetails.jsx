@@ -1,10 +1,12 @@
 import React from "react";
 import { useGetUserAccountDetailsQuery } from "../../app/features/usersApi";
 import Input from "./Input";
+import AccountDetailsSkeleton from "./AccountDetailsSkeleton";
 
 const AccountDetails = () => {
-  const { data, isLoading, error } = useGetUserAccountDetailsQuery();
-  if (isLoading) return <div>Loading...</div>;
+  const { data, isLoading, isFetching, error } =
+    useGetUserAccountDetailsQuery();
+  if (isLoading || isFetching) return <AccountDetailsSkeleton />;
   if (error) return <div>Error: {error.message}</div>;
   return (
     <div className="flex flex-col md:flex-row items-center gap-4">

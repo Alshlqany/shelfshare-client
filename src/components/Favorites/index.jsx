@@ -6,9 +6,9 @@ import NoBooksFound from "../Store/NoBooksFound";
 import Pagination from "../ui/Pagination";
 const FavoritesList = () => {
   const [page, setPage] = useState(1);
-  const { data, isLoading, isError } = useGetFavoritesQuery(page);
+  const { data, isLoading, isFetching, isError } = useGetFavoritesQuery(page);
 
-  if (isLoading)
+  if (isLoading || isFetching)
     return (
       <div className="grid grid-cols-[repeat(auto-fit,minmax(120px,1fr))] sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5 gap-4 pt-5 md:pt-0 ">
         {Array.from({ length: 15 }).map((_, idx) => (

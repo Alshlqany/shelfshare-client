@@ -14,7 +14,7 @@ const BooksList = () => {
   const { language } = useParams();
 
   const { filters } = useSelector((state) => state.booksFilters);
-  const { data, isLoading, isError } = useGetBooksQuery(filters);
+  const { data, isLoading, isFetching, isError } = useGetBooksQuery(filters);
   const dispatch = useDispatch();
   useEffect(() => {
     if (data) {
@@ -25,7 +25,7 @@ const BooksList = () => {
   const isValidLanguage = !language || languages.includes(language);
   if (!isValidLanguage) return <Navigate to="/books" />;
 
-  if (isLoading)
+  if (isLoading || isFetching)
     return (
       <div className="grid grid-cols-[repeat(auto-fit,minmax(120px,1fr))] sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5 gap-4 pt-5 md:pt-0 ">
         {Array.from({ length: 15 }).map((_, idx) => (
