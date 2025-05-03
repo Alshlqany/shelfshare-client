@@ -1,5 +1,3 @@
-import React from "react";
-
 const Title = ({ title, color = "var(--color-primary)" }) => {
   const [w1, w2] = title.split(" ");
 

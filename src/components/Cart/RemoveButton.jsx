@@ -1,4 +1,3 @@
-import React from "react";
 import { useDispatch } from "react-redux";
 import { removeItem } from "../../app/features/cartSlice";
 import { X } from "lucide-react";

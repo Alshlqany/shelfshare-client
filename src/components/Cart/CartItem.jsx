@@ -1,4 +1,3 @@
-import React from "react";
 import Input from "../ui/NumberInput";
 import RemoveButton from "./RemoveButton";
 

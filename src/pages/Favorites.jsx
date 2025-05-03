@@ -1,7 +1,5 @@
-import React from "react";
 import FavoritesList from "../components/Favorites";
 import Title from "../components/ui/Title";
-import Pagination from "../components/ui/Pagination";
 
 const Favorites = () => {
   return (
@@ -11,7 +9,6 @@ const Favorites = () => {
     >
       <Title title="My Favorites" color="var(--color-primary)" />
       <FavoritesList />
-      
     </div>
   );
 };

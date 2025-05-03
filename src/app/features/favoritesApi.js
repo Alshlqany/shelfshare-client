@@ -17,20 +17,18 @@ export const favoritesApi = createApi({
       query: (page) => {
         return `?page=${page}`;
       },
+      providesTags: ["Favorites"],
     }),
 
     toggleFavorite: builder.mutation({
       query: (bookId) => ({
-        // {bookId:"bookId"}
         url: `toggle`,
         method: "POST",
         body: { bookId },
       }),
+      invalidatesTags: ["Favorites"],
     }),
   }),
 });
 
-export const {
-  useGetFavoritesQuery,
-  useToggleFavoriteMutation,
-} = favoritesApi;
+export const { useGetFavoritesQuery, useToggleFavoriteMutation } = favoritesApi;

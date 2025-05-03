@@ -1,5 +1,5 @@
 /* eslint-disable no-unused-vars */
-import React from "react";
+
 import { Link } from "react-router-dom";
 import hero2 from "../../assets/hero-2.svg";
 import { motion } from "framer-motion";

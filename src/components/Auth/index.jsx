@@ -1,4 +1,3 @@
-import React from "react";
 import img from "../..//assets/hero-1.png";
 import { useSelector } from "react-redux";
 import { Navigate } from "react-router-dom";

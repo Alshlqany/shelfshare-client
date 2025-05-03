@@ -1,4 +1,3 @@
-import React from "react";
 import MuiPagination from "@mui/material/Pagination";
 import Stack from "@mui/material/Stack";
 

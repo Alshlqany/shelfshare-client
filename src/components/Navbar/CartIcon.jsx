@@ -1,4 +1,3 @@
-import React from "react";
 import StyledNavLink from "./StyledNavLink";
 import ShoppingCartOutlinedIcon from "@mui/icons-material/ShoppingCartOutlined";
 import { useSelector } from "react-redux";

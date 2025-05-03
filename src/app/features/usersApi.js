@@ -30,7 +30,24 @@ export const usersApi = createApi({
         body: { role },
       }),
     }),
+    getUserAccountDetails: builder.query({
+      query: () => `user/me`,
+      providesTags: ["User"],
+    }),
+    editUserInfo: builder.mutation({
+      query: (data) => ({
+        url: `user`,
+        method: "PUT",
+        body: data,
+      }),
+      invalidatesTags: ["User"],
+    }),
   }),
 });
 
-export const { useGetUsersQuery, useUpdateUserRoleMutation } = usersApi;
+export const {
+  useGetUsersQuery,
+  useUpdateUserRoleMutation,
+  useGetUserAccountDetailsQuery,
+  useEditUserInfoMutation,
+} = usersApi;

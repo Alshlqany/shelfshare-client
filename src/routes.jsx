@@ -13,6 +13,8 @@ import BooksList from "./components/Store/BooksList";
 import Success from "./pages/sucess";
 import Cancel from "./pages/Cancel";
 import Favorites from "./pages/Favorites";
+import Protected from "./components/Layouts/Protected";
+import Profile from "./pages/Profile";
 
 const router = createBrowserRouter([
   {
@@ -36,7 +38,22 @@ const router = createBrowserRouter([
           },
         ],
       },
-      { path: "/favorites", element: <Favorites /> },
+      {
+        path: "/favorites",
+        element: (
+          <Protected>
+            <Favorites />
+          </Protected>
+        ),
+      },
+      {
+        path: "/profile",
+        element: (
+          <Protected>
+            <Profile />
+          </Protected>
+        ),
+      },
       { path: "success", element: <Success /> },
       { path: "cancel", element: <Cancel /> },
       { path: "*", element: <NotFound /> },

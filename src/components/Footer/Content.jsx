@@ -1,5 +1,3 @@
-import React from "react";
-
 const Content = () => {
   return (
     <div className="relative h-full bg-primary text-white px-5 py-16 flex flex-col md:flex-row justify-between items-start overflow-hidden">

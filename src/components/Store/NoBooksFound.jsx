@@ -1,5 +1,4 @@
 import { BookX } from "lucide-react";
-import React from "react";
 
 const NoBooksFound = () => {
   return (

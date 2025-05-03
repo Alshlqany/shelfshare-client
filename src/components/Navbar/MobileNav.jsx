@@ -1,14 +1,15 @@
 /* eslint-disable no-unused-vars */
-import React from "react";
+
 import { motion, AnimatePresence } from "framer-motion";
 import StyledNavLink from "./StyledNavLink";
 import HomeIcon from "@mui/icons-material/Home";
 import StorefrontIcon from "@mui/icons-material/Storefront";
 import MailOutlineIcon from "@mui/icons-material/MailOutline";
 import BurgerIcon from "../ui/BurgerIcon";
+import { useState } from "react";
 
 const MobileNav = () => {
-  const [isOpen, setIsOpen] = React.useState(false);
+  const [isOpen, setIsOpen] = useState(false);
 
   const toggleMenu = () => {
     setIsOpen((prev) => !prev);

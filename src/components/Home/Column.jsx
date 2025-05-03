@@ -1,5 +1,5 @@
 /* eslint-disable no-unused-vars */
-import React from "react";
+
 import { motion } from "framer-motion";
 
 const Column = ({ images, y = 0 }) => {

@@ -1,5 +1,5 @@
 import { useFormik } from "formik";
-import React from "react";
+
 import { signupSchema } from "../../validations/UserSchema";
 import { Link, useNavigate } from "react-router-dom";
 import { useSignupMutation } from "../../app/features/authApi";
