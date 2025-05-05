@@ -12,7 +12,10 @@ const Profile = () => {
         <Title title="Account Details" color="var(--color-primary)" />
         <AccountDetails />
       </div>
-      <div className="mt-10 flex flex-col items-center gap-4">
+      <div
+        className="mt-10 container lg:px-50 flex flex-col items-center gap-4"
+        id="orders"
+      >
         <Title title="Orders History" color="var(--color-primary)" />
         <OrdersHistory />
       </div>

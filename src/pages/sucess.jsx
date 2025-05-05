@@ -13,7 +13,7 @@ const Success = () => {
         successfully.
       </p>
       <Link
-        to="/profile/orders"
+        to="/profile/#orders"
         className="bg-primary  text-white not-only:p-3 rounded-full"
       >
         Go TO Orders

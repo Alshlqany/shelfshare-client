@@ -3,10 +3,10 @@
 import { motion, AnimatePresence } from "framer-motion";
 import StyledNavLink from "./StyledNavLink";
 import HomeIcon from "@mui/icons-material/Home";
-import StorefrontIcon from "@mui/icons-material/Storefront";
 import MailOutlineIcon from "@mui/icons-material/MailOutline";
 import BurgerIcon from "../ui/BurgerIcon";
 import { useState } from "react";
+import { LibraryBigIcon } from "lucide-react";
 
 const MobileNav = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -65,7 +65,7 @@ const MobileNav = () => {
               >
                 <StyledNavLink
                   to="/books"
-                  icon={<StorefrontIcon />}
+                  icon={<LibraryBigIcon />}
                   text="Books"
                 />
               </motion.div>
