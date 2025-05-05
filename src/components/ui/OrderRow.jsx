@@ -9,6 +9,7 @@ import {
   CreditCard,
   XCircle,
 } from "lucide-react";
+import StarRate from "./StarRate";
 
 const statusIcons = {
   pending: <Clock className="text-amber-500" size={18} />,
@@ -112,7 +113,17 @@ const OrderRow = ({ order, isForAdmin }) => {
                         className="w-16 h-16 object-cover rounded-lg"
                       />
                       <div className="flex-1">
-                        <p className="font-medium">{item.book.title}</p>
+                        <div className="flex items-center  gap-5">
+                          <p className="font-medium">{item.book.title}</p>
+                          {!isForAdmin &&
+                            (item.book.userRating ||
+                              order.paymentStatus === "paid") && (
+                              <StarRate
+                                bookId={item.book._id}
+                                userRating={item.book.userRating}
+                              />
+                            )}
+                        </div>
                         <p className="text-sm text-gray-500">
                           Quantity: {item.qty}
                         </p>
