@@ -110,23 +110,23 @@ const OrderRow = ({ order, isForAdmin }) => {
                       <img
                         src={item.book.image}
                         alt={item.book.title}
-                        className="w-16 h-16 object-cover rounded-lg"
+                        className="w-16 h-24 sm:h-22 object-cover rounded-lg"
                       />
-                      <div className="flex-1">
-                        <div className="flex items-center  gap-5">
+                      <div className="flex-1 flex flex-col gap-1 sm:gap-2">
+                        <div className="flex items-center gap-2">
                           <p className="font-medium">{item.book.title}</p>
-                          {!isForAdmin &&
-                            (item.book.userRating ||
-                              order.paymentStatus === "paid") && (
-                              <StarRate
-                                bookId={item.book._id}
-                                userRating={item.book.userRating}
-                              />
-                            )}
                         </div>
                         <p className="text-sm text-gray-500">
                           Quantity: {item.qty}
                         </p>
+                        {!isForAdmin &&
+                          (item.book.userRating ||
+                            order.paymentStatus === "paid") && (
+                            <StarRate
+                              bookId={item.book._id}
+                              userRating={item.book.userRating}
+                            />
+                          )}
                       </div>
                       <div>
                         <p className="text-xs text-gray-500">

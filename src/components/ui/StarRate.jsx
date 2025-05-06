@@ -35,7 +35,7 @@ const StarRate = ({ bookId, userRating }) => {
 
   return (
     <div
-      className="flex items-center gap-1"
+      className="flex items-center mt-1"
       onMouseLeave={() => !isRated && setTempRating(null)}
     >
       {[1, 2, 3, 4, 5].map((star) => {
@@ -50,9 +50,9 @@ const StarRate = ({ bookId, userRating }) => {
             className="transition-transform hover:scale-110 focus:outline-none"
           >
             <StarIcon
-              size={24}
+              size={20}
               className={`${
-                isFilled ? "text-yellow-500" : "text-gray-300"
+                isFilled ? "text-yellow-500" : "text-gray-400"
               } transition-colors duration-150`}
               fill={isFilled ? "currentColor" : "none"}
               strokeWidth={isFilled ? 0 : 1.5}
