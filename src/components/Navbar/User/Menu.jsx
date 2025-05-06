@@ -33,7 +33,6 @@ const Menu = () => {
               />
             )}
             <MenuLink to="/Logout" idx={2} label="Logout" logout />
-            {/** TODO: */}
           </>
         )}
       </div>

@@ -1,4 +1,4 @@
-import { createBrowserRouter } from "react-router-dom";
+import { createBrowserRouter, Navigate } from "react-router-dom";
 import Home from "./pages/Home";
 import NotFound from "./pages/NotFound";
 import Login from "./pages/Login";
@@ -15,6 +15,7 @@ import Cancel from "./pages/Cancel";
 import Favorites from "./pages/Favorites";
 import Protected from "./components/Layouts/Protected";
 import Profile from "./pages/Profile";
+import { Books, Orders, Stats, Users } from "./pages/Admin";
 
 const router = createBrowserRouter([
   {
@@ -63,10 +64,11 @@ const router = createBrowserRouter([
     path: "/admin",
     element: <AdminLayout />,
     children: [
-      {
-        element: <div className="bg-orange-400 w-full">Admin Dashboard</div>,
-        index: true,
-      },
+      { index: true, element: <Navigate to="stats" replace /> },
+      { path: "stats", element: <Stats /> },
+      { path: "orders", element: <Orders /> },
+      { path: "books", element: <Books /> },
+      { path: "users", element: <Users /> },
     ],
   },
 ]);
