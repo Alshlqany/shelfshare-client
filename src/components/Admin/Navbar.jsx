@@ -16,7 +16,7 @@ const Navbar = () => {
   return (
     <>
       {/* Mobile Navbar */}
-      <nav className="md:hidden sticky top-0 left-0 w-full h-16 overflow-hidden text-primary bg-white flex items-center justify-between px-4 z-50 shadow-md">
+      <nav className="md:hidden fixed top-0 left-0 w-full h-16 overflow-hidden text-primary bg-white flex items-center justify-between px-4 z-50 shadow-lg">
         <img src={logo} alt="logo" className="h-25 mt-3" />
         <div className="flex items-center gap-4">
           <NavLink
@@ -54,7 +54,7 @@ const Navbar = () => {
 
       {/* Desktop Sidebar */}
       <aside className="hidden md:flex flex-col sticky top-0 left-0 h-screen w-64 text-primary bg-white pl-5 z-50 shadow-lg">
-        <div className="h-50 flex items-center justify-center mb-10">
+        <div className="h-50 flex">
           <img src={logo} alt="logo" className="object-cover" />
         </div>
 

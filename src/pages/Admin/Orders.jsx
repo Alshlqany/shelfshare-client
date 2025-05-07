@@ -1,9 +1,14 @@
-import React from 'react'
+import React from "react";
+import OrdersHistory from "../../components/Profile/OrdersHistory";
+import Title from "../../components/ui/Title";
 
 const Orders = () => {
   return (
-    <div>Orders</div>
-  )
-}
+    <div className="w-[50%] mx-auto ">
+      <Title title={"Orders"} />
+      <OrdersHistory isForAdmin={true} />
+    </div>
+  );
+};
 
-export default Orders
+export default Orders;

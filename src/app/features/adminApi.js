@@ -5,9 +5,7 @@ export const adminApi = createApi({
   baseQuery: fetchBaseQuery({
     baseUrl: "https://shelfshare-v2.vercel.app/api",
     prepareHeaders: (headers, { getState }) => {
-      // Get the token from Redux state
       const token = getState().user?.token;
-
       if (token) {
         headers.set("Authorization", `Bearer ${token}`);
       }

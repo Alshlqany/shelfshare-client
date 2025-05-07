@@ -5,12 +5,12 @@ import ZeroOrders from "./ZeroOrders";
 import OrderRow from "../ui/OrderRow";
 import OrderRowSkeleton from "../ui/OrderRowSkeleton";
 
-const OrdersHistory = () => {
+const OrdersHistory = ({ limit = 5, isForAdmin = false }) => {
   const [page, setPage] = useState(1);
 
   const { data, isLoading, isFetching, isError } = useGetOrdersQuery({
     page,
-    limit: 5,
+    limit,
   });
 
   if (isLoading || isFetching)
@@ -43,7 +43,7 @@ const OrdersHistory = () => {
       <div className="mx-auto w-full">
         <ul className="space-y-4 w-full">
           {data?.orders?.map((order) => (
-            <OrderRow key={order._id} order={order} />
+            <OrderRow key={order._id} order={order} isForAdmin={isForAdmin} />
           ))}
         </ul>
       </div>

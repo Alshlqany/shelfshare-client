@@ -11,7 +11,9 @@ const AdminLayout = () => {
   return (
     <main className="flex flex-col gap-5 md:flex-row w-full h-screen">
       <Navbar />
-      <Outlet />
+      <div className="px-5 py-10 flex-1 mt-15 md:mt-0 mb-5">
+        <Outlet />
+      </div>
     </main>
   );
 };
