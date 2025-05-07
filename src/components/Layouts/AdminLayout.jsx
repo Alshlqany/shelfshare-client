@@ -1,6 +1,6 @@
 import { useSelector } from "react-redux";
 import { Navigate, Outlet } from "react-router-dom";
-import Sidebar from "../Admin/Sidebar";
+import Navbar from "../Admin/Navbar";
 
 const AdminLayout = () => {
   const { role } = useSelector((state) => state.user);
@@ -9,8 +9,8 @@ const AdminLayout = () => {
   }
 
   return (
-    <main className="flex w-full h-screen">
-      <Sidebar />
+    <main className="flex flex-col gap-5 md:flex-row w-full h-screen">
+      <Navbar />
       <Outlet />
     </main>
   );
